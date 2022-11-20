@@ -46,10 +46,3 @@ C:\Users\SURAJ\source\repos\RESTAPIDOTNET\RESTAPIDOTNET\bin\Debug\System.Text.En
 C:\Users\SURAJ\source\repos\RESTAPIDOTNET\RESTAPIDOTNET\bin\Debug\System.Text.Json.xml
 C:\Users\SURAJ\source\repos\RESTAPIDOTNET\RESTAPIDOTNET\bin\Debug\System.Threading.Tasks.Extensions.xml
 C:\Users\SURAJ\source\repos\RESTAPIDOTNET\RESTAPIDOTNET\bin\Debug\System.ValueTuple.xml
-C:\Users\SURAJ\source\repos\RESTAPIDOTNET\RESTAPIDOTNET\bin\Debug\ICSharpCode.SharpZipLib.dll
-C:\Users\SURAJ\source\repos\RESTAPIDOTNET\RESTAPIDOTNET\bin\Debug\IKVM.Java.dll
-C:\Users\SURAJ\source\repos\RESTAPIDOTNET\RESTAPIDOTNET\bin\Debug\IKVM.Reflection.dll
-C:\Users\SURAJ\source\repos\RESTAPIDOTNET\RESTAPIDOTNET\bin\Debug\IKVM.Runtime.dll
-C:\Users\SURAJ\source\repos\RESTAPIDOTNET\RESTAPIDOTNET\bin\Debug\IKVM.Runtime.JNI.dll
-C:\Users\SURAJ\source\repos\RESTAPIDOTNET\RESTAPIDOTNET\bin\Debug\ICSharpCode.SharpZipLib.pdb
-C:\Users\SURAJ\source\repos\RESTAPIDOTNET\RESTAPIDOTNET\bin\Debug\ICSharpCode.SharpZipLib.xml
