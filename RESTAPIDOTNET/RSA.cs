@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Security.Cryptography;
 using System.Security.Cryptography.X509Certificates;
@@ -13,17 +14,9 @@ namespace RESTAPIDOTNET
 
         public string Encryption(string strText)
         {
-            var publicKey = @"-----BEGIN RSA PUBLIC KEY-----
-MIIBCgKCAQEAyGVfRqJ1KGkLh/cG6qiKKexZSTEcVEk3t3UkYdkfgWFd4VylNd36
-V7ckE+qCNhM8piXoVZX4WZFFs8S4ByzWPn3wK5lSpZDwDlqFb0fG2mnNyGGpM5Eq
-u0rB6XqiPkS2Bre5gSSxu5agyVog5wyPYAwklLpi7EFWpsRi3atEhqzWS+deopNk
-mmu5+dmhzOTs+eO/LctrqShqoIMLWCY0k4NMczhHXxuc8PMM/UnbTbm3hwQ5VDjD
-MHz3qJksBpGRd8RzLz2D/YOL5ZQAj/IP9iZjf1WV4b3Gr6ZTLNhB5kfX6xEFZm9v
-XHCDhKY/A1oWiEIc6AthlDMhoyqpszWGIwIDAQAB
------END RSA PUBLIC KEY-----";
 
-
-            var testData = Encoding.UTF8.GetBytes(strText);
+            string publicKey = File.ReadAllText(@"C:\\Users\\SURAJ\\source\\repos\\RESTAPIDOTNET\\RESTAPIDOTNET\\Keys\\publicKey.pem");
+              var testData = Encoding.UTF8.GetBytes(strText);
             using (var rsa = new RSACryptoServiceProvider(2048))
             {
                 try
@@ -31,6 +24,15 @@ XHCDhKY/A1oWiEIc6AthlDMhoyqpszWGIwIDAQAB
                     // client encrypting data with public key issued by server                    
                     // rsa.FromXmlString(publicKey);
 
+                    //GENERATE KEY START
+                    string publicPrivateKeyXML = rsa.ToXmlString(true);
+                    string publicOnlyKeyXML = rsa.ToXmlString(false);
+                    Console.WriteLine("publicPrivateKeyXML:::::" + publicPrivateKeyXML);
+                    Console.WriteLine("publicOnlyKeyXML:::::" + publicOnlyKeyXML);
+                    // GENERATE KEY END
+
+                   // File.WriteAllText(@"C:\\Users\\SURAJ\\source\\repos\\RESTAPIDOTNET\\RESTAPIDOTNET\\Keys\\publicKey.pem", publicPrivateKeyXML);
+                   // File.WriteAllText(@"C:\\Users\\SURAJ\\source\\repos\\RESTAPIDOTNET\\RESTAPIDOTNET\\Keys\\privateKey.pem", publicOnlyKeyXML);
                     rsa.FromXmlString(publicKey);
                     var encryptedData = rsa.Encrypt(testData, true);
                     var base64Encrypted = Convert.ToBase64String(encryptedData);

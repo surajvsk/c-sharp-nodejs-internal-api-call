@@ -37,7 +37,7 @@ namespace RESTAPIDOTNET
 
                 System.Collections.Specialized.NameValueCollection postData =
                     new System.Collections.Specialized.NameValueCollection()
-                   {{ "encrypted", json }};
+                   {{ "encrypted", encripted }};//ENCRIPTED DATA
 
                
                 string pagesource = Encoding.UTF8.GetString(client.UploadValues(URI, postData));
@@ -51,6 +51,7 @@ namespace RESTAPIDOTNET
         static void Main(string[] args)
         {
             Program p = new Program();
+
             p.POST_DATA();
             Console.ReadLine();
         }
